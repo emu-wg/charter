@@ -6,8 +6,8 @@ Area: SEC
 
 Personnel
 
- * Chairs: Joe Salowey and Mohit Sethi
- * Area Director: Roman Danyliw
+ * Chairs: Joe Salowey and Peter Yee
+ * Area Director: Paul Wouters
 
 # Charter for Working Group
 
@@ -20,6 +20,10 @@ At the same time, some new use cases for EAP have been identified. EAP is now mo
 Out-of-band (OOB) refers to a separate communication channel independent of the primary in-band channel over which the actual network communication takes place. OOB channels are now used for authentication in a variety of protocols and devices (draft-ietf-oauth-device-flow-13, WhatsApp Web, etc.). Many users are accustomed to tapping NFC or scanning QR codes. However, EAP currently does not have any standard methods that support authentication based on OOB channels. The group will therefore work on an EAP method where authentication is based on an out-of-band channel between the peer and the server.
 
 EAP authentication is based on credentials available on the peer and the server. However, some EAP methods use credentials that are time or domain limited (such as EAP-POTP), and there may be a need for creating long term credentials for re-authenticating the peer in a more general context. The group will investigate minimal mechanisms with which limited-use EAP authentication credentials can be used for creating general-use long-term credentials.
+
+EDHOC (Ephemeral Diffie-Hellman Over COSE) is a very compact and lightweight authenticated Diffie-Hellman key exchange with ephemeral keys that is suitable in constrained environments in which many of the existing EAP methods are not a good fit. EDHOC offers the useful properties of mutual authentication, forward secrecy, and identity protection. The group will accordingly produce a specification for an EAP method incorporating the EDHOC mechanism (draft-ietf-lake-edhoc).
+
+While TLS-based EAP mechanisms provide strong channel protections, if the client does not authenticate and validate the server's credentials properly (possibly owing to a lack of provisioned information necessary to undertake that validation), an EAP mechanism running over TLS that relies on passwords is vulnerable to client credential theft, much the same as password authentication over plain TLS is. The FIDO Alliance and the W3C have developed a passwordless authentication scheme known as FIDO2, which combines elements of the W3C's WebAuthn and FIDO's CTAP standards. The group will devise an EAP method suitable for use with the CTAP2 version of FIDO2.
 
 In summary, the working group shall produce the following documents:
 
@@ -39,22 +43,18 @@ In summary, the working group shall produce the following documents:
 
 	* Define mechanisms by which EAP methods can support creation of long-term credentials for the peer based on initial limited-use credentials.
 
-The working group is expected to stay in close collaboration with the EAP deployment community, the TLS working group (for work on TLS based EAP methods), and the 3GPP security architecture group (for EAP-AKA' work)
+	* Develop an EAP method for use in constrained environments that wish to leverage the EDHOC key exchange mechanism.
+
+	* Devise a passwordless EAP method that incorporates use of CTAP2.
+
+The working group is expected to stay in close collaboration with the EAP deployment community, the TLS working group (for work on TLS based EAP methods), the FIDO Alliance, and the 3GPP security architecture group (for EAP-AKA' work).
 
 
 
 ## Milestones
 
- * November 2019: WG last call on operational recommendations for large certificate and chain sizes 
+ * April 2024: WG adopts initial draft on an EAP method for use of EDHOC 
 
- * November 2019: WG last call on definition of session identifiers for fast re-authentication in EAP-SIM and EAP-AKA 
+ * April 2024: WG adopts initial draft on an EAP method for using FIDO CTAP2
 
- * November 2019: WG adopts initial draft addressing the errata found in EAP-TEAP
-
- * November 2019: WG adopts initial draft on an EAP method for mutual authentication based on an OOB channel
-
- * November 2019: WG adopts draft providing guidance for use of TLS 1.3 with TLS based EAP methods
-
- * Jan 2020: WG adopts initial draft on creation of long-term credentials for EAP peer based on initial limited-use credentials 
-
- * March 2020: WG last call on extension to EAP-AKA to support forward secrecy 
+ * April 2024: WG adopts an ancillary draft on use of the eap.arpa domain for use in other EAP methods
