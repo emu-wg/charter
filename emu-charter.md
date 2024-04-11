@@ -23,7 +23,7 @@ EAP authentication is based on credentials available on the peer and the server.
 
 EDHOC (Ephemeral Diffie-Hellman Over COSE) is a very compact and lightweight authenticated Diffie-Hellman key exchange with ephemeral keys that is suitable in constrained environments in which many of the existing EAP methods are not a good fit. EDHOC offers the useful properties of mutual authentication, forward secrecy, and identity protection. The group will accordingly produce a specification for an EAP method incorporating the EDHOC mechanism (draft-ietf-lake-edhoc).
 
-While TLS-based EAP mechanisms provide strong channel protections, if the client does not authenticate and validate the server's credentials properly (possibly owing to a lack of provisioned information necessary to undertake that validation), an EAP mechanism running over TLS that relies on passwords is vulnerable to client credential theft, much the same as password authentication over plain TLS is. The FIDO Alliance and the W3C have developed a passwordless authentication scheme known as FIDO2, which combines elements of the W3C's WebAuthn and FIDO's CTAP standards. The group will devise an EAP method suitable for use with the CTAP2 version of FIDO2.
+While TLS-based EAP mechanisms provide strong channel protections, if the client does not authenticate and validate the server's credentials properly (possibly owing to a lack of provisioned information necessary to undertake that validation), an EAP mechanism running over TLS that relies on passwords is vulnerable to client credential theft, much the same as password authentication over plain TLS is. The FIDO Alliance and the W3C have developed a passwordless authentication scheme known as FIDO2, which combines elements of the W3C's WebAuthn and FIDO's CTAP standards. The group will devise an EAP method suitable for use with passwordless authentication schemes such as the CTAP2 version of FIDO2.
 
 In summary, the working group shall produce the following documents:
 
@@ -45,7 +45,7 @@ In summary, the working group shall produce the following documents:
 
 	* Develop an EAP method for use in constrained environments that wish to leverage the EDHOC key exchange mechanism.
 
-	* Devise a passwordless EAP method that incorporates use of CTAP2.
+	* Devise a passwordless EAP method that can incorporate use of CTAP2 or other similar authentication mechanism.
 
 The working group is expected to stay in close collaboration with the EAP deployment community, the TLS working group (for work on TLS based EAP methods), the FIDO Alliance, and the 3GPP security architecture group (for EAP-AKA' work).
 
