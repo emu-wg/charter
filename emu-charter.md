@@ -54,12 +54,6 @@ In summary, the working group shall produce the following documents:
 
 The working group is expected to stay in close collaboration with the EAP deployment community, the TLS working group (for work on TLS based EAP methods), the FIDO Alliance, and the 3GPP security architecture group (for EAP-AKA' work).
 
-
-
 ## Milestones
 
- * April 2025: WG adopts initial draft on an EAP method based on Privacy Pass 
-
- * April 2024: WG adopts initial draft on an EAP method for using FIDO CTAP2
-
- * April 2024: WG adopts an ancillary draft on use of the eap.arpa domain for use in other EAP methods
+ * April 2025: WG adopts initial draft on an EAP method based on Privacy Pass
