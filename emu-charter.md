@@ -56,4 +56,4 @@ The working group is expected to stay in close collaboration with the EAP deploy
 
 ## Milestones
 
- * April 2025: WG adopts initial draft on an EAP method based on Privacy Pass
+ * June 2025: WG adopts initial draft on an EAP method based on Privacy Pass
