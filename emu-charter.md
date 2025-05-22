@@ -25,21 +25,12 @@ EDHOC (Ephemeral Diffie-Hellman Over COSE) is a very compact and lightweight aut
 
 While TLS-based EAP mechanisms provide strong channel protections, if the client does not authenticate and validate the server's credentials properly (possibly owing to a lack of provisioned information necessary to undertake that validation), an EAP mechanism running over TLS that relies on passwords is vulnerable to client credential theft, much the same as password authentication over plain TLS is. The FIDO Alliance and the W3C have developed a passwordless authentication scheme known as FIDO2, which combines elements of the W3C's WebAuthn and FIDO's CTAP standards. The group will devise an EAP method suitable for use with passwordless authentication schemes such as the CTAP2 version of FIDO2.
 
+While some EAP methods can provide some privacy there still can be a leakage of information as to which networks a particular user is accessing. Privacy pass protocols and tokens provide mechanisms to protect the user's privacy in this situation.  The group will work on an EAP method that provides privacy by preventing a visited network or service from knowing the identity of a user, and for keeping the identity provider for that user from tracking what networks or services a specific user is accessing.
+ 
+
 In summary, the working group shall produce the following documents:
 
-	* An update to enable the use of TLS 1.3 in the context of EAP-TLS (RFC 5216). This document will update the security considerations relating to EAP-TLS, document the implications of using new vs. old TLS versions. It will add any recently gained new knowledge on vulnerabilities and discuss the possible implications of pervasive surveillance.
-
-	* Several EAP methods such EAP-TTLS and EAP-FAST use an outer TLS tunnel. Provide guidance or update the relevant specifications explaining how those EAP methods (PEAP/TTLS/TEAP) will work with TLS 1.3. This will also involve maintenance work based on errata found in published specifications (such as EAP-TEAP).
-
-	* Define session identifiers for fast re-authentication for EAP-SIM, EAP-AKA, EAP-PEAP and EAP-AKA’. The lack of this definition is a recently discovered bug in the original RFCs.
-
-	* Update the EAP-AKA' specification (RFC 5448) to ensure that its capability to provide a cryptographic binding to network context stays in sync with updates to the referenced 3GPP specifications. The document will also contain any recently gained new knowledge on vulnerabilities or the possible implications of pervasive surveillance.
-
-	* Develop an extension to EAP-AKA' such that Perfect Forward Secrecy can be provided. There may also be privacy improvements that have become feasible with the  introduction of recent identity privacy improvements in 3GPP networks.
-
-	* Gather experience regarding the use of large certificates and long certificate chains in the context of TLS based EAP methods, as some implementations and access networks may limit the number of EAP packet exchanges that can be handled. Document operational recommendations or other mitigation strategies to avoid issues.
-
-	* Define a standard EAP method for mutual authentication between a peer and a server that is based on an out-of-band channel. The method itself should be independent of the underlying OOB channel and shall support a variety of OOB channels such as NFC, dynamically generated QR codes, audio, and visible light.
+	* Documents for the maintenance and update of existing EAP protocols 
 
 	* Define mechanisms by which EAP methods can support creation of long-term credentials for the peer based on initial limited-use credentials.
 
@@ -47,14 +38,15 @@ In summary, the working group shall produce the following documents:
 
 	* Devise a passwordless EAP method that can incorporate use of CTAP2 or other similar authentication mechanism.
 
+ 	* An EAP method that provides privacy by preventing a visited network or service from knowing the identity of a user, and for keeping the identity provider for that user from tracking what networks or services a specific user is accessing.
+
 The working group is expected to stay in close collaboration with the EAP deployment community, the TLS working group (for work on TLS based EAP methods), the FIDO Alliance, and the 3GPP security architecture group (for EAP-AKA' work).
-
-
 
 ## Milestones
 
- * April 2024: WG adopts initial draft on an EAP method for use of EDHOC 
+ * June 2025: WG adopts initial draft on an EAP method based on Privacy Pass
+ * June 2025: EAP-TLSPOK - submit to IESG
+ * Sept 2025: TEAP - resubmit to IESG
+ * Nov 2025: EAP-EDHOC - submit to IESG
+ * July 2026: EAP-FIDO - Submit to IESG
 
- * April 2024: WG adopts initial draft on an EAP method for using FIDO CTAP2
-
- * April 2024: WG adopts an ancillary draft on use of the eap.arpa domain for use in other EAP methods
