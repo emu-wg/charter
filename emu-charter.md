@@ -22,7 +22,7 @@ While TLS-based EAP mechanisms provide strong channel protections, if the client
 While some EAP methods can provide some privacy, there still can be a leakage of information as to which networks a particular user is accessing. Privacy pass protocols and tokens provide mechanisms to protect the user's privacy in this situation. The Working Group will work on an EAP method based on Privacy Pass that provides privacy by preventing a visited network or service from knowing the identity of a user, and for keeping the user's identity provider from tracking what networks or services the user is accessing.
  
 
-In summary, the working group shall produce the following standards track documents:
+In summary, the working group shall produce the following Standards Track documents:
 
 	* Documents for the maintenance and update of existing EAP protocols 
 
